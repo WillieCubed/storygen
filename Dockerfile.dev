@@ -1,0 +1,32 @@
+# Dockerfile for actually developing stuff
+# Example usage:
+# VERSION=0.1.0  # Replace with actual version
+# USERNAME=williecubed
+# PROJECT_NAME=ai-project-template
+# TAG=ghcr.io/$USERNAME/$PROJECT_NAME:$VERSION
+# docker build -t <app-name> . -f Dockerfile.dev
+# docker login ghcr.io --username <USERNAME>
+# docker tag $PROJECT_NAME $TAG
+# docker push $TAG
+FROM ubuntu:22.04
+
+# Install Python 3.10
+RUN apt update && apt install -y \
+    python3.10 \
+    python3-pip \
+    ## Headers for box2d-py
+    python3-dev
+
+COPY . /usr/local/src/app
+
+WORKDIR /usr/local/src/app
+
+# Install all dependencies
+## Copy file first to take advantage of caching
+COPY requirements.txt .
+
+## Now install general package requirements
+RUN pip install -r requirements.txt
+
+## Add package CLI to executables
+RUN pip install -e .

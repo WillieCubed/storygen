@@ -1,0 +1,37 @@
+# Core ML stuff
+numpy
+pandas
+matplotlib
+Pillow
+torch
+torchvision
+torchaudio
+jax
+
+## Computer Vision
+
+## NLP
+
+# More useful ML libraries
+transformers
+datasets
+evaluate
+diffusers
+
+# Other AI dependencies
+mujoco
+gym[atari]
+gym[accept-rom-license]
+gym[mujoco]
+gym[box2d]
+
+# Tooling
+
+## For the CLI
+fire
+gradio
+tqdm
+
+## Dev utilities
+jupyterlab
+black
