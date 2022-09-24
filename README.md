@@ -23,7 +23,12 @@ pip install -r requirements.txt
 ### Overview (Docker)
 
 After cloning the repository and customizing it to your needs, you can use it for
-development via Docker. This may be very useful 
+development via Docker. This may be very useful if you want a reliable execution
+environment.
+
+```shell
+docker pull ghcr.io/williecubed/ai-project-template:0.1.0
+```
 
 ### Customizing the CLI
 
