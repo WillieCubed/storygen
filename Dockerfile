@@ -23,5 +23,4 @@ RUN pip install -r requirements.txt
 RUN pip install -e .
 
 # By default, run the demo
-ENTRYPOINT python3
-CMD ["app.py"]
+CMD ["python3", "app.py"]
